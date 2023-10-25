@@ -37,13 +37,14 @@ body {
 }
 
 .container {
-  background: white;
-  width: min(100%, 700px);
+  background: var(--C_Neutral-White);
+  width: min(100%, 650px);
   border-radius: 20px;
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin: 0px 10px;
 }
 
 /* information */
@@ -58,37 +59,80 @@ body {
 }
 
 .information > h1 {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .information > h4 {
-    font-size: 15px;
+  font-size: 15px;
+  font-weight: var(--FW_normal);
+  font-size: 12px;
 }
 
-.information > ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.information > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
 }
 
-.information > ul > li{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: start;
+.information > ul > li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: start;
 }
 
-.writeEmail{
-    display: flex;
-    flex-direction: column;
+.form {
+  width: 100%;
+  display: grid;
+  gap: 10px;
 }
 
-.writeEmail > input{
-    outline: none;
-    padding: 10px;
-    border-radius: 5px;
-    border-color: var(--C_Neutral-Grey);
+.writeEmail {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.writeEmail div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.writeEmail > div label,
+.writeEmail > div p {
+  font-size: 10px;
+  font-weight: var(--FW_bold);
+}
+
+.writeEmail > div p {
+  color: var(--C_primary-Tomato);
+}
+
+.input_email {
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--C_Neutral-Grey);
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  color: var(--C_Neutral-White);
+  cursor: pointer;
+}
+
+.btn_subscribe {
+  background-color: var(--C_Neutral-DarkSlateGrey);
+  width: 100%;
+}
+
+.btn_subscribe:hover {
+  background-color: var(--C_primary-Tomato);
+  transition: all 80ms;
 }
 
 /* image */
@@ -96,9 +140,46 @@ body {
 .image {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .image > img {
   width: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 550px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    padding: 0;
+    gap: 0;
+    margin: 0;
+  }
+
+  .information {
+    margin-bottom: 50px;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .image {
+    grid-row: 1/2;
+  }
+
+  .image > img {
+    border-radius: 0px 0px 10px 10px;
+  }
+}
+
+/* styles if email isn't valid */
+.invalid {
+  border: 1px solid var(--C_primary-Tomato);
+  background: rgb(255, 227, 224);
+  color: var(--C_primary-Tomato);
+}
+
+.hidden {
+  display: none;
 }

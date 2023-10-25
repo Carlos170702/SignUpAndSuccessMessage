@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  /* colors */
+  --C_primary-Tomato: hsl(4, 100%, 67%);
+  --C_Neutral-DarkSlateGrey: hsl(234, 29%, 20%);
+  --C_Neutral-CharcoalGrey: hsl(235, 18%, 26%);
+  --C_Neutral-Grey: hsl(231, 7%, 60%);
+  --C_Neutral-White: hsl(0, 0%, 100%);
+
+  /* typography */
+  --FZ_body: 16px;
+
+  /* font family */
+  --FF_body: "Roboto", sans-serif;
+
+  /* font weight */
+  --FW_normal: 400;
+  --FW_bold: 700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  font-family: var(--FF_body);
+  font-size: var(--FZ_body);
+  font-weight: var(--FW_normal);
+  height: 100vh;
+  background: var(--C_Neutral-DarkSlateGrey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 300px;
+  background-color: var(--C_Neutral-White);
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.314);
+}
+
+.container img {
+  width: 40px;
+  height: 40px;
+}
+
+.container p {
+  font-size: 12px;
+}
+
+.btn_dismiss {
+  background-color: var(--C_primary-Tomato);
+}
